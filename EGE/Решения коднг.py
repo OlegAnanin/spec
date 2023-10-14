@@ -62,7 +62,46 @@ def f16():
     for x2 in range(1,2021):
        itog2=itog2*x2
     print(itog1/itog2)
-            
+
+def f162():
+    def F(n):
+        if n == 0:
+            return 1
+        if n == 1:
+            return 1
+        if n > 1:
+            return F(n - 1) * F(n - 2) + 1
+    print(F(6))
+    #https://www.youtube.com/watch?v=hX0nGyja4gA 27:33
+
+def f163():
+    def f(n):
+        if n > 2024:
+            return n
+        else:
+            return n * f(n + 1)
+    print(f(2022) / f(2024))
+
+
+def f17():
+    with open('17_4705.txt') as f:
+        nums=[int(x) for x in f]
+        maxi=[]
+        s=[]
+       
+        for i in range(len(nums)):
+          if nums[i]%10==3:
+             maxi.append(nums[i])
+        maximum=0
+        for i in range(len(nums)-1):
+            a=abs(nums[i])%10
+            b=abs(nums[i+1])%10
+            if ((a==3) and (b!=3)) or ((a!=3) and (b==3)):
+                if (nums[i]**2+nums[i+1]**2) >= max(maxi)**2: 
+                    s.append(nums[i]+nums[i+1])
+                    if nums[i]**2+nums[i+1]**2>maximum:
+                        maximum=nums[i]**2+nums[i+1]**2
+    print(len(s), maximum)
     
 
 
