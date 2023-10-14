@@ -54,6 +54,14 @@ def f12():
             s = s.replace('1122','25',1)
         if sum(map(int, s)) == 64:
             print(n)
+def f16():
+    #sys.setrecursionlimit(2500)
+    itog1=itog2=1
+    for x1 in range(1,2024):
+       itog1=itog1*x1
+    for x2 in range(1,2021):
+       itog2=itog2*x2
+    print(itog1/itog2)
             
     
 
