@@ -102,7 +102,50 @@ def f17():
                     if nums[i]**2+nums[i+1]**2>maximum:
                         maximum=nums[i]**2+nums[i+1]**2
     print(len(s), maximum)
-    
+
+def f192021():
+    def f(a,m):
+        if a>77: return m%2==0
+        if m==0: return 0
+        actions=(a+1),(a+4),(a*4)
+        steps=[f(a,m-1) for a in actions]
+        if m%2==0: return all(steps)
+        else: return any(steps)
+
+        s20=[s for s in range(1,78) if not f(s,1) and f(s,3) ]
+        print(s20)
+
+        s21=[s for s in range(1,78) if f(s,4) ]
+        print(min(s21))
+
+def f23():
+    def f(x,y):
+        if x>y or x==17:
+            return 0
+        elif x==y:
+            return 1
+        return f(x+1,y) +f(x*2,y)
+    print(f(1,10)*f(10,35))
+
+def f24():
+    #файл с компегэ  № 4710 Демоверсия 2023 (Уровень: Базовый)
+    with open('24_4710.txt') as f:
+        s=f.readline().replace('C','S').replace('D','S').replace('F','S')
+        s=s.replace('A','G').replace('O','G')
+        s=s.replace('SG','*')
+        k=kmax=0
+        for i in s:
+            if i=='*':
+                k+=1
+                kmax=max(k,kmax)
+            else:k=0
+    print(kmax)
+
+def f25():
+    for i in range(2023,10**10,2023):
+        num=str(i)
+        if num[0]=='1' and num[2:6]=='2139' and num[-1]=='4':
+            print(i,i//2023)
 
 
 
