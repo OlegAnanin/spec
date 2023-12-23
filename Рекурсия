@@ -1,0 +1,8 @@
+from math import factorial
+print(factorial(10))
+def f(n):
+    if n == 1: return 1
+    print(n)
+    print(f(n-1))
+    return f(n-1)*n
+print(f(10))
