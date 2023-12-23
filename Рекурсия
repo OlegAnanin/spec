@@ -1,3 +1,4 @@
+#факториал через рекурсию
 from math import factorial
 print(factorial(10))
 def f(n):
@@ -6,3 +7,19 @@ def f(n):
     print(f(n-1))
     return f(n-1)*n
 print(f(10))
+
+#числа фибоначчи
+def f(n):
+    if n < 3:
+        return 1
+    return f(n-1) + f(n-2)
+print(f(3))
+
+#23
+def f(x,y):
+    if x>y or x==17:
+        return 0
+    elif x==y:
+        return 1
+    return f(x+1,y) +f(x*2,y)
+print(f(1,10)*f(10,35))
