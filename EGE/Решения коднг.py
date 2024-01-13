@@ -146,6 +146,15 @@ def f25():
         num=str(i)
         if num[0]=='1' and num[2:6]=='2139' and num[-1]=='4':
             print(i,i//2023)
+def f251():
+    for i in range(2025,10**10,2024):
+        if re.match('^1.2157.*4$',str(i)):
+            print(i,i//2024)
+def f252():
+    for i in range(2025,10**10,2024):
+    num=str(i)
+    if fnmatch.fnmatch(num,"1?2157*4"):
+        print(i,i//2024)
 
 
 
