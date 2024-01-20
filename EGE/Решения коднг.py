@@ -157,4 +157,67 @@ def f252():
         print(i,i//2024)
 
 
+#24
+'''
+import re
+'''
+#20.06
+import re
+pat = re.compile(r'[1-9A-F][0-9A-F]+')
+m = pat.findall(open("24_9791.txt").readline())
+print(m[:5])
+print(len(max(m,key=len)))
+'''
+'''
+#27.06
+pat = re.compile(r'((8|9)?([ABC][89])+(A|B|C)?)')
+m = pat.findall(open("24_9845.txt").readline())
+m=[x[0] for x in m]
+print(m[:5])
+print(len(max(m,key=len)))
+print(max(m,key=len))
+'''
+
+'''
+#16.12
+pat = re.compile(r'(((SQ|Q|)?(RSQ)+(RS|R)?))')
+m = pat.findall(open("24_12254.txt").readline())
+m=[x[0] for x in m]
+print(m[:5])
+print(len(max(m,key=len)))
+print(max(m,key=len))
+'''
+'''
+(?<=abc).+
+.+(?=123)
+'''
+
+'''
+#Поляков генератор 5646
+#((?<=KK).+43\d\d78\d\d\d34.+(?=KK))
+pat = re.compile(r'(?<=KK).+(43\d\d78\d\d\d34).+(?=KK)')
+m = pat.findall(open("24-230.txt").readline())
+m = [int(x) for x in m]
+print(m[:10])
+#p = [x for x in m if x%2!=0]
+p=1
+for x in m:
+    if x%2!=0:
+        p = p*x
+print(p)
+'''
+
+
+
+#10105 Демоверсия 2024
+#(?=(([^T]*[T]){101}))
+pat = re.compile(r'(?=(([^T]*[T]){101}))')
+m = pat.findall(open("24_10105.txt").readline())
+m=[x[0] for x in m]
+print(len(max(m,key=len))-1)
+'''
+
+
+
+
 
